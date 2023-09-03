@@ -4,21 +4,15 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import { useState } from 'react';
 
 const Checkbox = () => {
-    const [selected, SetSelected] = useState(false);
 
-    const handleClick = () => {
-        SetSelected(!selected);
-    }
     return (
         <>
             <div  className="checkbox">
-            {selected
+            {true
                     ? <CheckBoxIcon
-                        onClick={handleClick}
                         style={{verticalAlign: "middle"}}
                     />
                     : <CheckBoxOutlineBlankIcon
-                        onClick={handleClick}
                         style={{verticalAlign: "middle"}}
                     />
                 }

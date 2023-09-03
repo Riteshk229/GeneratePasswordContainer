@@ -6,6 +6,12 @@ import { Charlength,List,Password, Strength } from './components'
 
 function App() {
   const [password, setPassword] = useState("PS3&SVBlA");
+  const [validate, setValidate] = useState({
+    hasLow: false,
+    hasCap: false,
+    hasNumber: false,
+    has8dtgit: false
+  });
 
   return (
     <>
@@ -15,10 +21,13 @@ function App() {
           <Charlength Password={password} />
         </div>
         <div className="secondblock">
-          <List/>
+          <List password={password} validate={validate} setValidate={setValidate} />
         </div>
         <div className="thirdblock">
-          <Strength Password={password}/>
+          <Strength
+            Password={password}
+            setPassword={setPassword}
+          />
         </div>
       </div>
     </>

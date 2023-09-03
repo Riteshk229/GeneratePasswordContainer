@@ -85,9 +85,10 @@
 }
 
 .strength {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  font-size: 16px;
+  width: 80px;
+  text-transform: capitalize;
+  
 }
 
 .bar  {
@@ -119,7 +120,7 @@ button{
 }
 
 .yellow{
-  color:#e78b01
+  color:#e78b01;
 }
 
 .green{
