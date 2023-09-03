@@ -18,14 +18,13 @@ function App() {
   validate.hasNumber = /[0-9]+/.test(password);
   validate.has8dtgit = /[^A-Za-z0-9]+/.test(password);
 
-  const isvalid = (validate.has8dtgit | validate.hasCap | validate.hasLow | validate.hasNumber) ? true : false;
-  console.log(isvalid);
+  const isvalid = (validate.has8dtgit & validate.hasCap & validate.hasLow & validate.hasNumber) ? true : false;
 
   return (
     <>
       <div className="container">
         <div className="firstblock">
-          <Password Password={password} setPassword={setPassword} />
+          <Password Password={password} setPassword={setPassword} isvalid={isvalid} />
           <Charlength Password={password} />
         </div>
         <div className="secondblock">

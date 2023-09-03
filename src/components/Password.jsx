@@ -3,17 +3,18 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import '../App.css'
 
 const Password = (props) => {
-    const { Password, setPassword } = props;
+    const { Password, setPassword,isValid } = props;
+
     return (
         <>
             <div className="password">
-                {/* <span>PS3&SVBlA</span> */}
                 <input
                     onChange={(e)=>setPassword(e.target.value)}
                     value={Password}
                 />
                 <ContentCopyIcon
-                    style={{color: "#707070"}}
+                    onClick={()=> navigator.clipboard.writeText(Password)}
+                    style={{color: "#707070", cursor:"pointer"}}
                 />
             </div>
         </>
