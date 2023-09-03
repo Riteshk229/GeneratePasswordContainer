@@ -6,12 +6,20 @@ import { Charlength,List,Password, Strength } from './components'
 
 function App() {
   const [password, setPassword] = useState("PS3&SVBlA");
-  const [validate, setValidate] = useState({
+  const validate = {
     hasLow: false,
     hasCap: false,
     hasNumber: false,
     has8dtgit: false
-  });
+  };
+
+  validate.hasCap = /[A-Z]+/.test(password);
+  validate.hasLow = /[a-z]+/.test(password);
+  validate.hasNumber = /[0-9]+/.test(password);
+  validate.has8dtgit = /[^A-Za-z0-9]+/.test(password);
+
+  const isvalid = (validate.has8dtgit | validate.hasCap | validate.hasLow | validate.hasNumber) ? true : false;
+  console.log(isvalid);
 
   return (
     <>
@@ -21,12 +29,13 @@ function App() {
           <Charlength Password={password} />
         </div>
         <div className="secondblock">
-          <List password={password} validate={validate} setValidate={setValidate} />
+          <List validate={validate}  />
         </div>
         <div className="thirdblock">
           <Strength
             Password={password}
             setPassword={setPassword}
+            valid = {isvalid}
           />
         </div>
       </div>

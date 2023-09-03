@@ -3,12 +3,12 @@ import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import { useState } from 'react';
 
-const Checkbox = () => {
-
+const Checkbox = (props) => {
+    const { selected } = props;
     return (
         <>
             <div  className="checkbox">
-            {true
+            {selected
                     ? <CheckBoxIcon
                         style={{verticalAlign: "middle"}}
                     />

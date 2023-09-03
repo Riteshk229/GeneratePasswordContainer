@@ -2,25 +2,24 @@
 import Checkbox from './CheckBox';
 
 const List = (props) => {
-  const { password, validate, setValidate } = props;
-  
+  const { validate} = props;
 
     return (
         <>
             <div className="Uppercase"> 
-              <Checkbox  />
+              <Checkbox selected = {validate.hasCap} />
               <span> Include UpperCase Letter</span>    
             </div>
             <div>
-              <Checkbox />
+              <Checkbox selected = {validate.hasLow}/>
               <span> Include LowerCase Letter</span>
             </div>
             <div>
-              <Checkbox />
+              <Checkbox selected = {validate.hasNumber}/>
               <span>  Include Numbers</span>
             </div>
             <div>
-              <Checkbox />
+          <Checkbox selected={validate.has8dtgit} />
               <span>  Include Symbols</span>
             </div>
         </>

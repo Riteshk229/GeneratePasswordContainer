@@ -1,9 +1,10 @@
+import { isValidElement } from 'react';
 import '../App.css'
 import generate from '../assets';
 import PasswordStrengthBar from 'react-password-strength-bar';
 
 const Strength = (props) => {
-  const { Password, setPassword } = props;
+  const { Password, setPassword , valid} = props;
   
   
   const handleClick = () => {
@@ -12,14 +13,20 @@ const Strength = (props) => {
   }
     return (
         <>
-            <div>
-            <span style={{textTransform : "uppercase"}}> Strength</span>
-            <div className='strength'>
-              <PasswordStrengthBar
-                password={Password}
-                minLength={8}
-              />
-            </div>
+          <div>
+            <span style={{ textTransform: "uppercase" }}> Strength</span>
+            {
+              valid
+              ?
+                <div className='strength'>
+                  <PasswordStrengthBar
+                    password={Password}
+                    minLength={8}
+                  />
+                </div>
+              : null
+            }
+
             </div>
             <button className="submit" onClick={handleClick}>generate</button>
         </>

@@ -88,7 +88,7 @@
   font-size: 16px;
   width: 80px;
   text-transform: capitalize;
-  
+
 }
 
 .bar  {
@@ -115,14 +115,8 @@ button{
   border-radius: 10px;
 }
 
-.red{
-  color: #8a0000;
-}
 
-.yellow{
-  color:#e78b01;
-}
-
-.green{
-  color: #46924e;
+button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }

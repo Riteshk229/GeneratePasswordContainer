@@ -9,6 +9,5 @@ export default function generate() {
  
         pass += chars.charAt(char)
     }
-    console.log(pass, length);
     return pass;
 }
