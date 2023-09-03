@@ -1,7 +1,7 @@
 import Charlength from "./CharLength";
 import Password from "./Password";
 import List from "./List";
-import Strength from "./strength";
+import displayStrength from "./Strength.jsx";
 
 export {
     Charlength,

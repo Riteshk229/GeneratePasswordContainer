@@ -1,9 +1,8 @@
-import { isValidElement } from 'react';
 import '../App.css'
 import generate from '../assets';
 import PasswordStrengthBar from 'react-password-strength-bar';
 
-const Strength = (props) => {
+const displayStrength = (props) => {
   const { Password, setPassword , valid} = props;
   
   
@@ -33,4 +32,4 @@ const Strength = (props) => {
     )
 }
 
-export default Strength;
+export default displayStrength;
